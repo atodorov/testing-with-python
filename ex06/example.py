@@ -50,3 +50,7 @@ def factorial(n):
         result *= factor
         factor += 1
     return result
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
