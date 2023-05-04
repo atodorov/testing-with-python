@@ -48,7 +48,14 @@ def test_create_with_initial_deposit_should_set_ballance_correctly(account_for_a
     assert 'EUR' == account_for_alex.currency
 
 
+# with fixtures. setup is -------------------------vvv     and      vvv
 def test_transfer_should_change_balance_for_both(account_for_alex, bobs_account):
     account_for_alex.transfer(30, bobs_account)
     assert 70 == account_for_alex.balance
     assert 30 == bobs_account.balance
+
+# without fixtures
+def test_create_with_initial_deposit_should_set_ballance_correctly():
+    # vvv setup is this line
+    account = BankAccount('Alex', 'Demo Account', 100, 'EUR')
+    assert 100 == account.balance
